@@ -1,14 +1,13 @@
 ---
-name: Develop in Docker
-description: Run workspaces on a Docker host using registry images
-tags: [local, docker]
+name: NodeJS Image
+description: Create a basic NodeJS workspace - based on a Docker cotnainer.
+tags: [local, docker, nodejs]
 icon: /icon/docker.png
 ---
 
-# docker
+# NodeJS
 
-To get started, run `coder templates init`. When prompted, select this template.
-Follow the on-screen instructions to proceed.
+To get started, run `coder templates create` and follow the onscreen prompts.
 
 ## Editing the image
 

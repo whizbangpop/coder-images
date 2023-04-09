@@ -1,14 +1,16 @@
 ---
-name: Develop in Docker
-description: Run workspaces on a Docker host using registry images
-tags: [local, docker]
+name: Python3
+description: Run a basic Python3 (w/Pip3) workspace - based off a Docker container.
+tags: [local, docker, python]
 icon: /icon/docker.png
 ---
 
 # docker
 
-To get started, run `coder templates init`. When prompted, select this template.
-Follow the on-screen instructions to proceed.
+
+To get started, run `coder login <your-coder-url>` to authenticate. 
+
+Then, run `coder templates create`. Follow the on screen prompts.
 
 ## Editing the image
 
