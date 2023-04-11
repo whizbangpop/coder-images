@@ -24,6 +24,14 @@ provider "docker" {
 data "coder_workspace" "me" {
 }
 
+variable "git_repo" {
+  description = <<-EOF
+  Clone a Git repository (optional)
+
+  EOF
+  default = "https://github.com/whizbangpop/coder-images"
+}
+
 resource "coder_agent" "main" {
   arch                   = data.coder_provisioner.me.arch
   os                     = "linux"
@@ -35,6 +43,8 @@ resource "coder_agent" "main" {
     # install and start code-server
     curl -fsSL https://code-server.dev/install.sh | sh -s -- --method=standalone --prefix=/tmp/code-server --version 4.8.3
     /tmp/code-server/bin/code-server --auth none --port 13337 >/tmp/code-server.log 2>&1 &
+
+    git clone ${var.git_repo} &
   EOT
 
   # These environment variables allow you to make Git commits right away after creating a
